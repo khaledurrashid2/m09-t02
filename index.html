@@ -6,7 +6,70 @@
     <title>G3 Architects - Try02</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-<body>
-    
+<body class="work-sans-font">
+    <!-- nav and header banner -->
+    <header>
+        <nav>
+            <div class="brand">G3 Architects</div>
+            <div class="nav-items">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="header-details">
+            <header-info-section>
+                <h1 class="header-title">Brand New <br>Group of Architects</h1>
+                <p class="info-paragraph">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even</p>
+                <button class="btn-main">Enquire More</button>
+            </header-info-section>
+
+            <div class="banner-image">
+                <img src="/images/banner.png" alt="image of three architects smiling together">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- quick-list section -->
+        <section class="quick-list">
+
+        </section>
+
+        <!-- features section -->
+         <section class="features">
+
+         </section>
+
+         <!-- some-facts section -->
+          <section class="some-facts">
+
+          </section>
+
+          <!-- sponsors section -->
+          <section class="sponsors">
+            <div class="section-title">Our Sponsors</div>
+            <div class="section-paragraph">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</div>
+            <div class="sponsor-images">
+                <img src="/images/sponsors/spotify.png" alt="">
+                <img src="/images/sponsors/amazon.png" alt="">
+                <img src="/images/sponsors/google.png" alt="">
+                <img src="/images/sponsors/telerama.png" alt="">
+                <img src="/images/sponsors/figma.png" alt="">
+            </div>
+          </section> 
+
+          <!-- footer -->
+           <footer>
+                <h5>All rights reserved. Copyright: &copy; 2011 - <span id="year"></span> : G3 Architects</h5>
+                <script>
+                    document.getElementById("year").textContent = new Date().getFullYear();
+                </script>
+
+           </footer>
+    </main>
 </body>
 </html>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;900;1,100;900&display=swap');
 
 * {
     margin: 0;
@@ -44,35 +44,116 @@
 
 
 
-/* header section */
+/* ===============================
+   Header & Nav
+=============================== */
 header {
-    max-width: 1440;
-    margin: 0 auto;
-    background-color: rgba(255, 144, 14, 0.1);
-    padding: 45px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.header-title {
-    font-size: 4rem;
-    font-weight: 700;
+/* -------------------------------
+   Nav
+--------------------------------- */
+nav {
+  display: flex;
+  justify-content: space-between; /* brand left, nav-items right */
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  box-sizing: border-box;
 }
+
+/* Brand */
+.brand {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #131313;
+}
+
+/* Nav Items */
+.nav-items ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 24px; /* space between li items */
+}
+
+.nav-items ul li a {
+  text-decoration: none;
+  color: #131313;
+  padding: 12px 20px;
+  display: inline-block;
+  transition: background-color 0.3s, border-radius 0.3s;
+  border-radius: 6px;
+}
+
+/* Hover effect */
+.nav-items ul li a:hover {
+  background-color: #f0f0f0; /* light-grey background */
+}
+
+/* -------------------------------
+   Header Details: Banner + Info
+--------------------------------- */
+.header-details {
+  display: flex;
+  flex-direction: column; /* stack children vertically */
+  align-items: center;    /* center horizontally */
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  gap: 40px;
+}
+
+/* Info Section */
+header-info-section {
+  display: grid;
+  row-gap: 24px;
+  width: 100%;
+}
+
+/* Header Title */
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #131313;
+  text-align: center; /* center aligned since stacked vertically */
+}
+
+/* Paragraph */
 .info-paragraph {
-    color: #727272;
-    font-size: 1rem;
+  font-size: 1rem;
+  color: #727272;
+  text-align: center;
+}
+
+/* Button */
+header-info-section .btn-main {
+  width: 180px;       /* fixed width including padding */
+  padding: 10px 0;    /* adjust top/bottom padding if needed */
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  display: block;
+  box-sizing: border-box; /* include padding in width */
+}
+
+/* Banner Image */
+.banner-image {
+  width: 100%;
 }
 
 .banner-image img {
-    max-width: 1440;
-    margin: 0 auto;
-    padding: 50px 0;
+  width: 100%;   /* full width of container */
+  height: auto;  /* maintain aspect ratio */
+  display: block;
+  max-width: 100%; /* respect container max width */
 }
 
-.header-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
 
 /* ===============================
    Quick List Section
@@ -306,6 +387,41 @@ footer h5 {
 /* ---------------------------------------------- */
 @media screen and (max-width: 576px) {
  
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+  }
+
+  nav .nav-items ul {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  nav .nav-items ul li a {
+    padding: 12px 20px;
+    text-align: center;
+  }
+
+  .header-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .banner-image img {
+    width: 100%;
+    height: auto;
+  }
+
   .quick-list {
     grid-template-columns: 1fr; /* stack images and info vertically */
     row-gap: 30px;
@@ -414,6 +530,28 @@ footer h5 {
 
 @media screen and (min-width: 577px) and (max-width: 992px) {
  
+  nav {
+    max-width: 100%;
+    padding: 20px 30px;
+  }
+
+  .header-details {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  nav .nav-items ul {
+    gap: 16px;
+  }
+
+  .banner-image img {
+    width: 100%;
+    height: auto;
+  }
+
   .quick-list {
     grid-template-columns: 1fr; /* stack images and info vertically */
     row-gap: 40px;
@@ -498,5 +636,4 @@ footer h5 {
     padding-top: 30px;
     padding-bottom: 30px;
   }
-
-
+} /* end of tablet @media */

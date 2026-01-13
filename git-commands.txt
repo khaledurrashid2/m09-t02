@@ -1,0 +1,8 @@
+Git commands for 'module09 try02
+---------------------------------
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/khaledurrashid2/m09-t02.git
+git push -u origin main

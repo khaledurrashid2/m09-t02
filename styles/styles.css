@@ -74,36 +74,83 @@ header {
     text-align: center;
 }
 
-/* ----------------------- */
-/* Features Section */
-.features {
+/* ===============================
+   Quick List Section
+   =============================== */
+.quick-list {
   display: grid;
-  grid-template-columns: 1fr 60px 1fr; /* left, gap, right */
+  grid-template-columns: 1fr 1fr; /* left images, right info */
+  column-gap: 60px;
   max-width: 1440px;
   margin: 0 auto;
-  align-items: start; /* align items vertically at top */
   padding: 80px 20px;
-  column-gap: 60px; /* gap between left and right parts */
+  align-items: start;
+  box-sizing: border-box;
 }
 
-/* Left Part */
+/* -------------------------------
+   Images Section
+--------------------------------- */
+.q-list-images-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.q-list-images-section img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* -------------------------------
+   Info Section
+--------------------------------- */
+.q-list-info-section {
+  display: grid;
+  row-gap: 32px; /* vertical spacing between items */
+}
+
+.q-list-info-section .section-title,
+.q-list-info-section .section-paragraph,
+.q-list-info-section button {
+  text-align: left; /* left-aligned on desktop */
+}
+
+/* Button Styling */
+.q-list-info-section .btn-main {
+  padding: 15px 30px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+/* ----------------------- */
+/* ===============================
+   Features Section - Desktop & Responsive
+   =============================== */
+.features {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr; /* left column, gap, right column */
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: start;
+  column-gap: 60px;
+  padding: 80px 20px;
+  box-sizing: border-box; /* prevent horizontal overflow */
+}
+
+/* -------------------------------
+   Left Part
+--------------------------------- */
 .features-left-part {
   display: grid;
   row-gap: 40px;
 }
 
-/* Section title and paragraph */
-.features-left-part .section-title {
-  font-size: 2rem; /* optional, adjust */
-  font-weight: 600;
-  color: #131313;
-  text-align: left;
-}
-
+/* Section Title and Paragraph (left-aligned on all screens) */
+.features-left-part .section-title,
 .features-left-part .section-paragraph {
-  font-size: 1rem;
-  font-weight: 400;
-  color: #727272;
   text-align: left;
 }
 
@@ -117,8 +164,8 @@ header {
 .f-info-card {
   padding: 30px;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle grey shadow */
-  border-radius: 8px; /* optional rounding */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 8px;
   display: grid;
   row-gap: 10px;
 }
@@ -139,16 +186,18 @@ header {
   text-align: left;
 }
 
-/* Right Part */
+/* -------------------------------
+   Right Part
+--------------------------------- */
 .features-right-part {
   display: grid;
   row-gap: 20px; /* space between image and button */
-  justify-items: end; /* align content to the right horizontally */
+  justify-items: end; /* align content to right horizontally */
   align-items: start;
 }
 
 /* Image inside right part */
-.features-right-part image img {
+.features-right-part img {
   height: 700px;
   object-fit: cover;
   display: block;
@@ -156,16 +205,15 @@ header {
 
 /* Large Button */
 .features-large-button-part {
-  justify-self: end; /* aligns button to right edge, below image */
+  justify-self: end; /* aligns button to right edge */
 }
 
 .features-large-button-part .large-button {
   padding: 20px 40px;
   font-size: 1.25rem;
   font-weight: 600;
-  margin-left: -100px;
+  cursor: pointer;
 }
-
 
 /* ..................... */
 /* some-facts section */
@@ -258,23 +306,40 @@ footer h5 {
 /* ---------------------------------------------- */
 @media screen and (max-width: 576px) {
  
- 
-  .features {
-    display: grid;
-    grid-template-columns: 1fr; /* stacked vertically */
-    row-gap: 40px;
-    padding: 40px 15px;
+  .quick-list {
+    grid-template-columns: 1fr; /* stack images and info vertically */
+    row-gap: 30px;
+    padding: 40px; /* 40px left & right margin */
   }
 
-  .features-left-part,
-  .features-right-part {
+  .q-list-images-section {
+    grid-template-columns: 1fr; /* stack images vertically */
+    gap: 24px;
+    justify-items: center;
+  }
+
+  .q-list-info-section {
+    row-gap: 24px;
     justify-items: center; /* center content horizontally */
     text-align: center;
   }
 
-  .features-left-part .section-title,
-  .features-left-part .section-paragraph {
-    text-align: center;
+  .q-list-info-section button {
+    justify-self: center;
+  }
+
+ .features {
+    display: grid;
+    grid-template-columns: 1fr; /* stack vertically */
+    row-gap: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+  }
+
+  .features-left-part,
+  .features-right-part {
+    justify-items: center; /* center horizontally */
   }
 
   .featues-info-cards {
@@ -287,21 +352,14 @@ footer h5 {
     padding: 20px;
   }
 
-  .features-right-part {
-    justify-content: center;
-  }
-
-  .features-right-part image img {
+  .features-right-part img {
     height: auto;
     max-width: 100%;
   }
 
   .features-large-button-part {
-    position: relative;
-    top: 0;
+    justify-self: center;
     margin-top: 20px;
-    left: auto;
-    text-align: center;
   }
    
 
@@ -356,17 +414,37 @@ footer h5 {
 
 @media screen and (min-width: 577px) and (max-width: 992px) {
  
+  .quick-list {
+    grid-template-columns: 1fr; /* stack images and info vertically */
+    row-gap: 40px;
+    padding: 60px 80px; /* 80px left & right margin */
+  }
+
+  .q-list-images-section {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+    justify-items: center; /* center images */
+  }
+
+  .q-list-info-section {
+    row-gap: 32px;
+    margin-left: 30px; /* left-aligned with 30px left margin */
+    justify-items: start; /* left-aligned content */
+    text-align: left;
+  }
+
+
   .features {
     display: grid;
-    grid-template-columns: 1fr; /* stack left and right vertically */
-    row-gap: 60px;
-    padding: 60px 30px;
+    grid-template-columns: 1fr; /* stack vertically */
+    row-gap: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
+    box-sizing: border-box;
   }
 
   .features-left-part,
   .features-right-part {
-    justify-items: center;
-    text-align: center;
+    justify-items: center; /* center horizontally */
   }
 
   .featues-info-cards {
@@ -379,17 +457,14 @@ footer h5 {
     padding: 25px;
   }
 
-  .features-right-part image img {
+  .features-right-part img {
     height: auto;
     max-width: 100%;
   }
 
   .features-large-button-part {
-    position: relative;
-    top: 0;
+    justify-self: center; /* center button below image */
     margin-top: 20px;
-    left: auto;
-    text-align: center;
   }
 
   .fact-cards {
@@ -400,7 +475,7 @@ footer h5 {
   .fact-card {
     padding: 28px;
   }
-}
+
 
 
     .sponsor-images {
